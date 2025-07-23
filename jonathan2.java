@@ -5,8 +5,7 @@ class jonathan2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int i, j, k, q, m;
-        int soma = 0;
+        int i, j, k, q, m, w;
 
         int[] vet1 = new int[10];
         int[] vet2 = new int[10];
@@ -21,6 +20,7 @@ class jonathan2 {
             }
             vet1[i] = sc.nextInt();
         }
+        System.out.println(" ");
         for (j = 0; j < 10; j++) {
             System.out.printf("Digite o %dº valor do vetor 2: ", (j + 1));
             while (!sc.hasNext()) {
@@ -30,8 +30,9 @@ class jonathan2 {
             }
             vet2[j] = sc.nextInt();
         }
-
-        vet3[m] = vet1[i] + vet2[j];
+        for (w = 0; w < 10; w++) {
+            vet3[w] = vet1[w] + vet2[w];
+        }
 
         System.out.print("\n----------------------------------------");
         for (k = 0; k <= 9; k++) {
@@ -55,9 +56,13 @@ class jonathan2 {
             }
         }
         System.out.print("\n----------------------------------------");
-        for (m = 0; m < 9; m++) {
+        for (m = 0; m <= 9; m++) {
             if (m == 0) {
                 System.out.printf("\nvet3 = [ %d ", vet3[0]);
+            } else if (m == 9) {
+                System.out.printf(" %d ]", vet3[9]);
+            } else {
+                System.out.printf(" %d ", vet3[m]);
             }
         }
         sc.close();
