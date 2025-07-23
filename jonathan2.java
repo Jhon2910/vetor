@@ -5,7 +5,7 @@ class jonathan2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int i, j, k, q, m, w;
+        int i;
 
         int[] vet1 = new int[10];
         int[] vet2 = new int[10];
@@ -21,48 +21,48 @@ class jonathan2 {
             vet1[i] = sc.nextInt();
         }
         System.out.println(" ");
-        for (j = 0; j < 10; j++) {
-            System.out.printf("Digite o %dº valor do vetor 2: ", (j + 1));
+        for (i = 0; i < 10; i++) {
+            System.out.printf("Digite o %dº valor do vetor 2: ", (i + 1));
             while (!sc.hasNext()) {
                 System.out.println("Digite um valor inteiro!");
-                System.out.printf("Digite o %dº valor do vetor 2: ", (j + 1));
+                System.out.printf("Digite o %dº valor do vetor 2: ", (i + 1));
                 sc.next();
             }
-            vet2[j] = sc.nextInt();
+            vet2[i] = sc.nextInt();
         }
-        for (w = 0; w < 10; w++) {
-            vet3[w] = vet1[w] + vet2[w];
+        for (i = 0; i < 10; i++) {
+            vet3[i] = vet1[i] + vet2[i];
         }
 
         System.out.print("\n----------------------------------------");
-        for (k = 0; k <= 9; k++) {
-            if (k == 0) {
+        for (i = 0; i <= 9;i++) {
+            if (i == 0) {
                 System.out.printf("\nvet1 = [ %d ", vet1[0]);
-            } else if (k == 9) {
+            } else if (i == 9) {
                 System.out.printf(" %d ]", vet1[9]);
             } else {
-                System.out.printf(" %d ", vet1[k]);
+                System.out.printf(" %d ", vet1[i]);
             }
 
         }
         System.out.print("\n----------------------------------------");
-        for (q = 0; q <= 9; q++) {
-            if (q == 0) {
+        for (i = 0; i <= 9; i++) {
+            if (i == 0) {
                 System.out.printf("\nvet2 = [ %d ", vet2[0]);
-            } else if (q == 9) {
+            } else if (i == 9) {
                 System.out.printf(" %d ]", vet2[9]);
             } else {
-                System.out.printf(" %d ", vet2[q]);
+                System.out.printf(" %d ", vet2[i]);
             }
         }
         System.out.print("\n----------------------------------------");
-        for (m = 0; m <= 9; m++) {
-            if (m == 0) {
+        for (i = 0; i <= 9; i++) {
+            if (i == 0) {
                 System.out.printf("\nvet3 = [ %d ", vet3[0]);
-            } else if (m == 9) {
+            } else if (i == 9) {
                 System.out.printf(" %d ]", vet3[9]);
             } else {
-                System.out.printf(" %d ", vet3[m]);
+                System.out.printf(" %d ", vet3[i]);
             }
         }
         sc.close();
