@@ -28,7 +28,7 @@ public class jonathan4 {
             j1--;
         }
 
-        System.out.println("Vetor Original = [ ");
+        System.out.print("Vetor Original = [ ");
         for (i = 0; i <= 9; i++) {
             System.out.printf(" %d ",VetorOriginal[i]);
         }
@@ -36,7 +36,7 @@ public class jonathan4 {
 
         System.out.println(" ");
 
-        System.out.print("\nVetor Invertido = [ ");
+        System.out.print("Vetor Invertido = [ ");
         for (i = 0; i <= 9; i++) {
             System.out.printf(" %d ",VetorInvertido[i]);
         }
