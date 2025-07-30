@@ -3,52 +3,53 @@ import java.util.Scanner;
 public class jonathan7 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n, nulo = 0, par = 0, impar = 0;
-        int i;
-        double div;
+        int n;
 
-        System.out.print("Digite quantos numeros gostaria de digitar: ");
-        while (!sc.hasNextInt()) {
-            System.out.print("Digite apenas números inteiros!");
-            System.out.print("Digite quantos numeros gostaria de digitar: ");
-            sc.next();
-        }
-        n = sc.nextInt();
-
-        int vet[] = new int[n];
-        int vet1[] = new int[n];
-        int vet2[] = new int[n];
-
-        for (i = 0; i < n; i++) {
-            System.out.printf("Digite o %d° numero até 100: ", i + 1);
-            vet[i] = sc.nextInt();
-
-            if (vet[i] <= 100 && sc.hasNextInt()) {
-                if (vet[i] == 0) {
-                    vet1[i] = nulo;
-                } else if (vet1[i] % 2 != 0 || vet1[i] < 0) {
-                    vet2[i] = vet[i];
-                }else {
-                    vet1[i] = vet[i];
-                }
-
-            } else {
-                if (!sc.hasNextInt()) {
-                    System.out.println("Digite apenas numeros inteiros!");
-                } else {
-                    System.out.println("Digite um número até 100!");
-                }
+        System.out.print("Digite quantos números gostaria de digitar (até 100): ");
+        while (true) {
+            while (!sc.hasNextInt()) {
+                System.out.print("Digite apenas números inteiros! ");
                 sc.next();
-                i--;
+            }
+            n = sc.nextInt();
+            if (n > 0 && n <= 100) {
+                break;
+            } else {
+                System.out.print("Digite um valor entre 1 e 100: ");
             }
         }
-        for (i=0;i < n-1;i++){
-            par = vet1[i] + vet1[i+1];
-            impar = vet2[i] + vet2[i+1];
-        }
-        div = (double) par / (double) impar;
 
-        System.out.print(div);
+        int[] vetor1 = new int[n];
+        int[] vetor2 = new int[n];
+        int cont1 = 0, cont2 = 0;
+
+        for (int i = 0; i < n; i++) {
+            System.out.printf("Digite o %dº número: ", i + 1);
+            while (!sc.hasNextInt()) {
+                System.out.print("Digite apenas números inteiros! ");
+                sc.next();
+            }
+            int num = sc.nextInt();
+
+            if (num > 0 && num % 2 == 0) {
+                vetor1[cont1++] = num;
+            } else if (num % 2 != 0 || num < 0) {
+                vetor2[cont2++] = num;
+            }
+        }
+
+        System.out.print("Vetor1 (positivos e pares): ");
+        for (int i = 0; i < cont1; i++) {
+            System.out.print(vetor1[i] + " ");
+        }
+        System.out.println();
+
+        System.out.print("Vetor2 (ímpares e/ou negativos): ");
+        for (int i = 0; i < cont2; i++) {
+            System.out.print(vetor2[i] + " ");
+        }
+        System.out.println();
+
         sc.close();
     }
 }
