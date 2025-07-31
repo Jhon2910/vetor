@@ -6,7 +6,9 @@ public class jonathan9 {
         Scanner sc = new Scanner(System.in);
 
         int fichas[] = new int[5];
-        double altura[] = new double[5];
+        double alturageral[] = new double[5];
+        double alturaH = 0;
+        double alturaM = 0;
         int sexo[] = new int[5];
         int i;
         int codigo[] = new int[5];
@@ -16,27 +18,25 @@ public class jonathan9 {
         double menor = Integer.MAX_VALUE;
         int quantM = 0;
         int quantH = 0;
-        double acima = 0;
-        double abaixo = 0;
         double soma = 0;
 
-        for (i = 0; i < altura.length; i++) {
-            System.out.printf("\nDigite a altura do aluno %d em metros : ", i + 1);
+        for (i = 0; i < alturageral.length; i++) {
+            System.out.printf("\nDigite a alturageral do aluno %d em metros : ", i + 1);
             while (!sc.hasNextDouble()) {
                 System.out.println("\nDigite um numero valido! ");
-                System.out.printf("\nDigite a altura do aluno %d em metros : ", i + 1);
+                System.out.printf("\nDigite a alturageral do aluno %d em metros : ", i + 1);
                 sc.next();
             }
-            altura[i] = sc.nextDouble();
+            alturageral[i] = sc.nextDouble();
 
-            if (altura[i] > maior) {
-                maior = altura[i];
+            if (alturageral[i] > maior) {
+                maior = alturageral[i];
             }
-            if (altura[i] < menor) {
-                menor = altura[i];
+            if (alturageral[i] < menor) {
+                menor = alturageral[i];
             }
 
-            if (altura[i] < 0) {
+            if (alturageral[i] < 0) {
                 System.out.print("Digite um numero positivo!");
                 i--;
             } else {
@@ -54,30 +54,35 @@ public class jonathan9 {
                 } else {
                     if (sexo[i] == 1) {
                         quantH += 1;
+                        alturaH += alturageral[i];
+                        mediaH = alturaH / quantH;
+                        if (alturageral[i] < mediaM) {
+                            double abaixo[] = new double[quantH];
+                            for (int j = 0; j < quantH; j++) {
+                                abaixo[j] = alturageral[i];
+                            }
+                        }
                     } else {
                         quantM += 1;
+                        alturaM += alturageral[i];
+                        if (alturaM[i] > mediaH) {
+                            
+                        }
                     }
+                   
+                    mediaM = alturaM / quantM;
                 }
             }
-            soma = altura[i] + altura[i++];
-            media = soma / altura.length;
-
-            mediaH = altura[i] / quantH;
-            mediaM = altura[i] / quantM;
-
-            acima = mediaM / quantH;
-            abaixo = mediaH / quantH;
-
-            if (sexo[i] > media) {
-            }
-
+            soma += alturageral[i];
         }
 
-        System.out.printf("A maior altura é : %.2f", maior);
-        System.out.printf("\nA menor altura é : %.2f", menor);
+        media = soma / alturageral.length;
+        
+        System.out.printf("A maior alturageral é : %.2f", maior);
+        System.out.printf("\nA menor alturageral é : %.2f", menor);
         System.out.printf("\nA média é :%.2f: ", media);
-        System.out.printf("\nAs mulheres com a altura acima da media da altura dos homens: %.2f", acima);
-        System.out.printf("\nOs homens com a altura abaixo da media das mulheres: %.2f", abaixo);
+        System.out.printf("\nAs mulheres com a alturageral acima da media da alturageral dos homens: %.2f", acima);
+        System.out.printf("\nOs homens com a alturageral abaixo da media das mulheres: %.2f", abaixo[j]);
 
         sc.close();
     }
