@@ -59,7 +59,8 @@ public class jonathan9 {
                     }
                 }
             }
-            media = altura[i] / altura.length;
+            soma = altura[i] + altura[i++];
+            media = soma / altura.length;
 
             mediaH = altura[i] / quantH;
             mediaM = altura[i] / quantM;
@@ -69,7 +70,7 @@ public class jonathan9 {
 
             if (sexo[i] > media) {
             }
-            soma = altura[i] + altura[i+1];
+
         }
 
         System.out.printf("A maior altura é : %.2f", maior);
