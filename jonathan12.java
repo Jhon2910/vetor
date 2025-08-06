@@ -1,41 +1,51 @@
-import java.util.Scanner;//terminar
+import java.util.Scanner;
 
 public class jonathan12 {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        int n = 0;
+        perguntas(n);
+    }
 
-        int i, j;
-
-        System.out.print("Digite até quando voce quer digitar: ");
+    public static void perguntas(int n) {
+        System.out.print("Quantos números gostaria de digitar? ");
         while (!sc.hasNextInt()) {
-            System.out.print("Digíte apenas numeros inteiros!");
-            System.out.print("Digite até quando voce quer digitar: ");
+            System.out.println("Por favor, digite um número inteiro.");
+            System.out.print("Quantos números gostaria de digitar? ");
             sc.next();
         }
-        j = sc.nextInt();
+        n = sc.nextInt();
 
-        int vet[] = new int[j];
+        int[] vet = new int[n];
 
-        for (i = 0; i < j; i++) {
-            System.out.printf("Digite o %dº numero: ", i + 1);
+        for (int i = 0; i < n; i++) {
+            System.out.printf("Digite o %dº número: ", i + 1);
             while (!sc.hasNextInt()) {
-                System.out.println("Digite apenas numeros inteiros! ");
-                System.out.printf("Digite o %dº numero: ", i + 1);
+                System.out.println("Por favor, digite um número inteiro.");
+                System.out.printf("Digite o %dº número: ", i + 1);
+                sc.next();
             }
             vet[i] = sc.nextInt();
         }
 
-        for (i = 0; i < j; i++) {
-            for (int c = 0; c < i; c++) {
-                if (vet[i] < vet[i + 1]) {
-                    int aux = vet[i + 1];
-                    vet[i] = aux;
+        verificar(vet);
+    }
 
-                }
+    public static void verificar(int[] vet) {
+        boolean crescente = true;
+
+        for (int i = 0; i < vet.length - 1; i++) {
+            if (vet[i] > vet[i + 1]) {
+                crescente = false;
+                break;
             }
         }
 
-        sc.close();
+        if (crescente) {
+            System.out.println("Os números digitados estão em ordem crescente.");
+        } else {
+            System.out.println("Os números digitados NÃO estão em ordem crescente.");
+        }
     }
 }
