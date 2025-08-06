@@ -9,8 +9,8 @@ public class jonathan16 {
         int medidas[]  = new int[N];
         boolean pico = false;
         for (int i=0;i < ){
-            medidas
+            medidas[j] = sc.nextInt();
         }
-        
+
     }
 }
