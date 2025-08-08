@@ -27,10 +27,10 @@ public class jonathan14 {
         }
 
         calculos(soma, QuantLatas, latas);
-
+        sc.close();
     }
 
-    static void calculos(double soma, int QuantLatas, double[] latas) {
+    public static void calculos(double soma, int QuantLatas, double[] latas) {
 
         int media = (int) soma / QuantLatas;
 
@@ -51,7 +51,7 @@ public class jonathan14 {
         S(S);
     }
 
-    static void S(double S) {
+    public static void S(double S) {
 
         System.out.println("Desvio padrão: " + S);
 
@@ -60,6 +60,5 @@ public class jonathan14 {
         } else {
             System.out.println("O processo está dentro dos padrões.");
         }
-        sc.close();
     }
 }
