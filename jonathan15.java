@@ -35,6 +35,7 @@ public class jonathan15 {
                 }
             }
         }
+        sc.close();
     }
 
     public static void menu() {
@@ -89,7 +90,7 @@ public class jonathan15 {
                 }
                 saque = sc.nextDouble();
 
-                if (saldo[numeroConta] >= 0) {
+                if (saldo[numeroConta] < saque) {
                     System.out.println("Saldo insuficiente!");
                 } else {
                     saldo[numeroConta] -= saque;
